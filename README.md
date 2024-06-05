@@ -16,24 +16,56 @@ Run the notebooks sequentially by notebook name, e.g., 0001_COVID-HATE_preparati
 Code in `2000_cleaning` may need to be slightly modified as outputs are not fully deterministic.
 
 # Datasets
-We use datasets presented in the following papers:
-- He, B., Ziems, C., Soni, S., Ramakrishnan, N., Yang, D., Kumar, S.: Racism is a
-virus: Anti-asian hate and counterspeech in social media during the covid-19 crisis.
-In: Proceedings of the 2021 IEEE/ACM International Conference on Advances
-in Social Networks Analysis and Mining. ASONAM ’21, pp. 90–94. Association
-for Computing Machinery, New York, NY, USA (2022). https://doi.org/10.1145/3487351.3488324
-- ElSherief, M., Ziems, C., Muchlinski, D., Anupindi, V., Seybolt, J., De Choudhury, M., Yang, D.: Latent hatred: A benchmark for understanding implicit hate
-speech. In: Proceedings of the 2021 Conference on Empirical Methods in Natural
-Language Processing, pp. 345–363. Association for Computational Linguistics,
-Online and Punta Cana, Dominican Republic (2021). https://doi.org/10.18653/v1/2021.emnlp-main.29 . https://aclanthology.org/2021.emnlp-main.29
-- Sap, M., Gabriel, S., Qin, L., Jurafsky, D., Smith, N.A., Choi, Y.: Social bias
-frames: Reasoning about social and power implications of language. In: Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics,
-pp. 5477–5490. Association for Computational Linguistics, Online (2020). https://doi.org/10.18653/v1/2020.acl-main.486 . https://aclanthology.org/2020.acl-main.486
-- Sap, M., Swayamdipta, S., Vianna, L., Zhou, X., Choi, Y., Smith, N.A.: Annotators with attitudes: How annotator beliefs and identities bias toxic language
-detection. In: Proceedings of the 2022 Conference of the North American
-Chapter of the Association for Computational Linguistics: Human Language
-Technologies, pp. 5884–5906. Association for Computational Linguistics, Seattle, United States (2022). https://doi.org/10.18653/v1/2022.naacl-main.431 .
-https://aclanthology.org/2022.naacl-main.431
-- Pei, J., Jurgens, D.: When do annotator demographics matter? measuring the
-influence of annotator demographics with the POPQUORN dataset. In: Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII), pp. 252–265.
-Association for Computational Linguistics, Toronto, Canada (2023). https://doi.org/10.18653/v1/2023.law-1.25 . https://aclanthology.org/2023.law-1.25
+We use the following datasets:
+
+COVID-HATE [1]
+
+Implicit Hate Corpus (IHC) [2]
+
+Social Bias Inference Corpus (SBIC) [3]
+
+Annotators with Attitudes (AWA) [4]
+
+POPQUORN [5]
+
+# Prompts
+The system prompt adopts the Persona prompt pattern identified by White et al. [6].
+
+For user prompt, attempts were made to remain faithful to the original annotation templates:
+
+Implicit Hate Corpus (IHC) [2]
+
+Social Bias Inference Corpus (SBIC) [3, 7]
+
+Annotators with Attitudes (AWA) [4, 8]
+
+POPQUORN [5, 9]
+
+The exception is COVID-HATE [1], for which no annotation template was made available, and hence one of the prompt templates (Prompt 2) from Li et al. [10] was used in combination with definitions from the COVID-HATE study [1]. For all tasks except for the generation of NLEs for IHC [2], we included in the user prompt constraints on the possible answer options, emulating Ziems et al. [11]. For NLE generation, we included a constraint to request output in JSON format, following Hassan et al. [12]. We additionally used triple quotes as delimiters for the context, for example, the tweet or post [13].
+
+# References
+[1] B He, et al., Racism is a virus: Anti-asian hate and counterspeech in social media during the covid-19 crisis in Proceedings of the 2021 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining, ASONAM ’21. (Association for Computing Machinery, New York, NY, USA), p. 90–94 (2022).
+
+[2] M ElSherief, et al., Latent hatred: A benchmark for understanding implicit hate speech in Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. (Association for Computational Linguistics, Online and Punta Cana, Dominican Republic), pp. 345–363 (2021).
+
+[3] M Sap, et al., Social bias frames: Reasoning about social and power implications of language in Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. (Association for Computational Linguistics, Online), pp. 5477–5490 (2020).
+
+[4] M Sap, et al., Annotators with attitudes: How annotator beliefs and identities bias toxic language detection in Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. (Association for Computational Linguistics, Seattle, United States, pp. 5884-5906 (2022).
+
+[5] J Pei, D Jurgens, When do annotator demographics matter? measuring the influence of annotator demographics with the POPQUORN dataset in Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII). (Association for Computational Linguistics, Toronto, Canada), pp. 252–265 (2023).
+
+[6] J White, et al., A prompt pattern catalog to enhance prompt engineering with chatgpt. CoRR abs/2302.11382 (2023).
+
+[7] M Sap, et al., Full instructions (https://maartensap.com/social-bias-frames/annotationTask.html) (2022) Accessed: 2024-04-17.
+
+[8] M Sap, et al., Full instructions (https://maartensap.com/racial-bias-hatespeech/annWithAttitudes-LargeScale.html) (2022) Accessed: 2024-04-17.
+
+[9] J Pei, D Jurgens, Using the annotation interfaces (https://github.com/Jiaxin-Pei/Potato-Prolific-Dataset) (2023) Accessed: 2024-04-17.
+
+[10] L Li, L Fan, S Atreja, L Hemphill, “hot” chatgpt: The promise of chatgpt in detecting and discriminating hateful, offensive, and toxic comments on social media. ACM Trans. Web 18 (2024).
+
+[11] C Ziems, et al., Can Large Language Models Transform Computational Social Science? Comput. Linguist. pp. 1–55 (2024).
+
+[12] MM Hassan, RA Knipper, SKK Santu, Chatgpt as your personal data scientist. CoRR abs/2305.13657 (2023).
+
+[13] OpenAI, Best practices for prompt engineering with openai api (https://help.openai.com/en /articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) (2023) Accessed: 2023-08-22.
