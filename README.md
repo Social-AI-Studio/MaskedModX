@@ -68,4 +68,4 @@ The exception is COVID-HATE [1], for which no annotation template was made avail
 
 [12] MM Hassan, RA Knipper, SKK Santu, Chatgpt as your personal data scientist. CoRR abs/2305.13657 (2023).
 
-[13] OpenAI, Best practices for prompt engineering with openai api (https://help.openai.com/en /articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) (2023) Accessed: 2023-08-22.
+[13] OpenAI, Best practices for prompt engineering with openai api (https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) (2023) Accessed: 2023-08-22.
