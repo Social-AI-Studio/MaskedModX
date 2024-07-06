@@ -41,7 +41,7 @@ Annotators with Attitudes (AWA) [4, 8]
 
 POPQUORN [5, 9]
 
-The exception is COVID-HATE [1], for which no annotation template was made available, and hence one of the prompt templates (Prompt 2) from Li et al. [10] was used in combination with definitions from the COVID-HATE study [1]. For all tasks except for the generation of NLEs for IHC [2], we included in the user prompt constraints on the possible answer options, emulating Ziems et al. [11]. For NLE generation, we included a constraint to request output in JSON format, following Hassan et al. [12]. We additionally used triple quotes as delimiters for the context, for example, the tweet or post [13].
+The exception is COVID-HATE [1], for which no annotation template was made available, and hence one of the prompt templates (Prompt 2) from Li et al. [10] was used in combination with definitions from the COVID-HATE study [1]. The prompt template from Li et al. [10] already includes a constraint on possible answer options. For all other tasks except for the generation of NLEs for IHC [2], we included in the user prompt constraints on the possible answer options, emulating Ziems et al. [11]. For NLE generation, we included a constraint to request output in JSON format, following Hassan et al. [12]. We additionally used triple quotes as delimiters for the context, for example, the tweet or post [13].
 
 # References
 [1] B He, et al., Racism is a virus: Anti-asian hate and counterspeech in social media during the covid-19 crisis in Proceedings of the 2021 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining, ASONAM ’21. (Association for Computing Machinery, New York, NY, USA), p. 90–94 (2022).
